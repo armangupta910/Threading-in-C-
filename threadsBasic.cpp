@@ -47,3 +47,29 @@ zsh: abort      ./a.out
 Note :- If you create multiple threads at a time, you cannot predict which thread gets created first i.e. you never knwo which thread is executed first.
 As in the above code, you can't be sure if t1 will be created first. It may happen that t2 gets created first.
 */
+
+/*
+Note :- You cannot predict that if you've created a new thread, it gets created on the same processor or the new processor. It's just OS and situation dependent.
+
+To get the total numbers of core, use this :-
+
+unsigned int c = std::thread::hardware_concurrency();
+
+*/
+
+/*
+Thead Specific Functions (Can be used within a Thread) :- 
+
+1. // Get thread ID of thread
+std::this_thread::get_id();
+
+2. // Give priority to other threads, pause execution
+std::this_thread::yield();
+
+3. // Sleep for some amount of time
+std::this_thread::sleep_for(std::chrono::seconds(1));
+
+4. // Sleep until some time
+std::chrono::system_clock::time_point time_point = std::chrono::system_clock::now() + std::chrono::seconds(10);
+std::this_thread::sleep_until(time_point);
+*/

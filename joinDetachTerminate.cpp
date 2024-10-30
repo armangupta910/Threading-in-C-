@@ -45,3 +45,7 @@ If you use detach function, it will not wait for the thread to complete, just as
 Detach is not like the Thread will be terminated. It's just that you will not be able to access that thread from the main function. Also when the main function ends, all the Threads are automatically terminated.
 */
 
+/*
+If you use terminate inside the Thread function, it will kill the whole Program process and not just the current thread. So always use return statement to exit from a thread.
+*/
+
